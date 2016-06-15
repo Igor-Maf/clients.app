@@ -1,0 +1,31 @@
+{
+  "name": "clients.dev",
+  "version": "1.0.0",
+  "description": "Client app using ES6",
+  "main": "./public/app.bundle.js",
+  "scripts": {
+    "prestart": "npm install & bower install",
+    "start": "gulp"
+  },
+  "author": "Ihor Gevorkyan",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "vinyl-source-stream": "^1.1.0",
+    "wiredep": "^4.0.0"
+  }
+}

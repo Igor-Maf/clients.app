@@ -1,0 +1,7 @@
+{
+  "name": "clients-app",
+  "private": true,
+  "dependencies": {
+    "reset-scss": "^2.0.2"
+  }
+}
