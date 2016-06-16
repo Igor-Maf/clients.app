@@ -9,12 +9,15 @@ html.no-js
         link(rel='stylesheet' href='main.css')
     body
         section
-            include ../header/header
+            block header
+                include ../header/header
 
             section.wrapper
-                include ../sidebar/sidebar
+                block sidebar
+                    include ../sidebar/sidebar
                 block content
 
-            include ../footer/footer
+            block footer
+                include ../footer/footer
 
         script(src='app.bundle.js')

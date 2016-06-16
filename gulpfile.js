@@ -68,8 +68,15 @@
             }));
     });
 
+    gulp.task('json', () => {
+        return gulp.src(path.src + '/*.json')
+            .pipe(gulp.dest(path.dist))
+            .pipe(reload({
+                stream: true
+            }));
+    });
     // Build
-    gulp.task('serve', ['scripts', 'views', 'styles'], () => {
+    gulp.task('serve', ['scripts', 'views', 'styles', 'json'], () => {
         browserSync({
             notify: false,
             port: 9000,
@@ -91,6 +98,7 @@
         gulp.watch(path.src + '/**/*.{sass, scss}', ['styles']);
         gulp.watch(path.src + '/**/*.js', ['scripts']);
         gulp.watch(path.src + '/**/*.jade', ['views']);
+        gulp.watch(path.src + '/*.json', ['json']);
         gulp.watch('bower.json', ['wiredep']);
     });
     
@@ -100,13 +108,6 @@
                 ignorePath: /^(\.\.\/)+/
             }))
             .pipe(gulp.dest(path.src));
-
-        gulp.src(path.src + '/layouts/default.jade')
-            .pipe(wiredep({
-                exclude: ['bootstrap-sass'],
-                ignorePath: /^(\.\.\/)*\.\./
-            }))
-            .pipe(gulp.dest(path.src + '/layouts/'));
     });
 
     gulp.task('clean', del.bind(null, [
