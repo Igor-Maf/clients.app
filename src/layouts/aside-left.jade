@@ -9,20 +9,12 @@ html.no-js
         link(rel='stylesheet' href='main.css')
     body
         section
-            header
-                nav
-                    ul
-                        li.active: a(href='#') Home
-                        li: a(href='#') About
-                        li: a(href='#') Contact
+            include ../header/header
 
-        h3 Clients App
+            section.wrapper
+                include ../sidebar/sidebar
+                block content
 
-        main
-            h1 'Allo, 'Allo!
-
-        block content
-
-        block footer
+            include ../footer/footer
 
         script(src='app.bundle.js')
