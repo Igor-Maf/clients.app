@@ -1,0 +1,35 @@
+script(id="tpl_client-details" type="text/template").
+    <div class="l-card l-card--details" data-email="<%- item.contact.email %>">
+        <div class="l-card__thumbnail">
+            <img src="<%- item.general.avatar %>">
+        </div>
+        <div class="l-card__content">
+            <h1>
+                <%- item.general.firstName %>
+                <%- item.general.lastName %>
+            </h1>
+            <h4>
+                <%- item.job.title %>
+            </h4>
+            <p>(<%- item.job.company %>)</p>
+            <p>
+                <%- item.address.city %>,
+                <%- item.address.country %>,
+                <%- item.address.street %>,
+                <%- item.address.zipCode %>
+            </p>
+            <ul>
+                <li>
+                    <a href="mailto: <%- item.contact.email %>">
+                        <%- item.contact.email %>
+                    </a>
+                </li>
+                <li>
+                    <a href="callto: <%- item.contact.phone %>">
+                        <%- item.contact.phone %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+

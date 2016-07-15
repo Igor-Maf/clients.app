@@ -1,0 +1,12 @@
+.c-client
+  &:hover
+    border-color: $light-blue
+    cursor: pointer
+    +transition(all, .5s, ease)
+
+  &__thumbnail
+  &__name
+  &__job
+
+  &[class*="--active"]
+    border-color: darken($light-blue, 15)

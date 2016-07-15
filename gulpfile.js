@@ -15,7 +15,8 @@
 
     const path = {
         src: './src',
-        dist: './dist'
+        dist: './dist',
+        docs: './docs'
     };
 
     // ES6 to ES5 with Babel
@@ -34,6 +35,19 @@
                 stream: true
             }));
     });
+
+    // jsDoc
+    gulp.task('js-doc', ['clean-docs'], (cb) => {
+        gulp.src([
+            'README.md',
+            path.src + '/**/*.js'
+        ], {
+            read: false
+        })
+            .pipe($.jsdoc3(cb));
+    });
+
+    gulp.task('clean-docs', del.bind(null, path.docs));
 
     // Jade to HTML
     gulp.task('views', () => {
@@ -76,7 +90,7 @@
             }));
     });
     // Build
-    gulp.task('serve', ['scripts', 'views', 'styles', 'json'], () => {
+    gulp.task('serve', ['scripts', 'views', 'styles', 'json', 'js-doc'], () => {
         browserSync({
             notify: false,
             port: 9000,
@@ -101,7 +115,7 @@
         gulp.watch(path.src + '/*.json', ['json']);
         gulp.watch('bower.json', ['wiredep']);
     });
-    
+
     gulp.task('wiredep', () => {
         gulp.src(path.src + '/main.sass')
             .pipe(wiredep({

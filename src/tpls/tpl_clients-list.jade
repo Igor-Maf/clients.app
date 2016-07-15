@@ -1,0 +1,21 @@
+script(id="tpl_clients-list" type="text/template").
+    <ul class="l-list">
+    <% items.forEach(function(item) { %>
+        <li class="l-list__item">
+            <div class="c-client l-card" data-href="<%- item.contact.email %>">
+                <div class="l-card__thumbnail">
+                    <img src="<%- item.general.avatar %>" class="c-client__thumbnail">
+                </div>
+                <div class="l-card__content">
+                    <h4 class="c-client__name">
+                        <%- item.general.firstName %>
+                        <%- item.general.lastName %>
+                    </h4>
+                    <h5 class="c-client__job">
+                        <%- item.job.title %>
+                    </h5>
+                </div>
+            </div>
+        </li>
+    <% }); %>
+    </ul>

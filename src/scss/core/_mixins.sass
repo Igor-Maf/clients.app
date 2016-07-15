@@ -1,3 +1,4 @@
+// Columns
 =col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false)
   width: 100%
   font-size: 16px
@@ -7,6 +8,19 @@
   padding-left: if($first, 0, $gap)
   padding-right: if($last, 0, $gap)
 
-  @media only screen and (min-width: 768px)
+  @media (min-width: $tablet-to) /* only screen and */
     width: percentage($col / $sum)
     vertical-align: $align
+
+
+// Animation
+=transition($what: all, $time: .2s, $how: ease-in-out)
+  -webkit-transition: $what $time $how
+  -moz-transition:    $what $time $how
+  -ms-transition:     $what $time $how
+  -o-transition:      $what $time $how
+  transition:         $what $time $how
+
+// Font size for headings
+=heading-size($size)
+  font-size: $size * $step-size-font * $amplifier-font + em

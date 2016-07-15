@@ -5,16 +5,26 @@
 // bower:sass
 // endbower
 
-@import "scss/core/_vars"
-@import "scss/core/_mixins"
+@import "scss/core/vars"
+@import "scss/core/mixins"
+@import "scss/core/extends"
 
-// layouts
-@import "layouts/aside-left"
+@import "generic"
+
+// page-layouts
+@import "page-layouts/1column-left"
+
+// page-components
+@import "page-layouts/includes/aside"
 
 // components
-@import "header/header"
-@import "footer/footer"
-@import "sidebar/sidebar"
+@import "scss/components/c-client"
+@import "scss/components/c-search"
+
+// layouts
+@import "scss/layouts/l-list"
+@import "scss/layouts/l-card"
+
 
 // pages
-@import "scss/index"
+@import "scss/_index"

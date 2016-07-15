@@ -1,0 +1,42 @@
+body
+  font-size: 100%
+  font-family: "Segoe UI", sans-serif
+  background-color: $light-grey
+
+a,
+a:hover,
+a:focus
+  text-decoration: none
+
+a:hover
+  +transition(all, .5s, ease)
+
+img
+  max-width: 100%
+
+@each $element, $value in $context-font
+  #{$element}
+    h1
+      +heading-size(6 * $value)
+      margin: $margin-heading
+    h2
+      +heading-size(5 * $value)
+      margin: $margin-heading
+    h3
+      +heading-size(4 * $value)
+      margin: $margin-heading
+    h4
+      +heading-size(3 * $value)
+      margin: $margin-heading
+    h5
+      +heading-size(2 * $value)
+      margin: $margin-heading
+    h6
+      +heading-size(1 * $value)
+      margin: $margin-heading
+
+p, li
+  margin: $margin-heading
+
+label
+  cursor: pointer
